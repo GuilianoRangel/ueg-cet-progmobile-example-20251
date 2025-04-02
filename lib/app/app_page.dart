@@ -47,13 +47,15 @@ class _AppPageState extends State<AppPage> with SignalsMixin {
        _prefs.then((SharedPreferencesWithCache prefs) {
          print("counter"+prefs.getInt('counter').toString());
          counter.value = prefs.getInt('counter') ?? 0;
+
+         counter.subscribe((value) async{
+           final SharedPreferencesWithCache prefs = await _prefs;
+           print(counter.value);
+           prefs.setInt('counter', counter.value);
+         });
       });
     });
-    counter.subscribe((value) async{
-      final SharedPreferencesWithCache prefs = await _prefs;
-      print(counter.value);
-      prefs.setInt('counter', counter.value);
-    });
+
   }
 
   void _navigateToAboutPage(){
