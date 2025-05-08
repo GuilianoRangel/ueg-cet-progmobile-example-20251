@@ -1,0 +1,8 @@
+generatorName: dart-dio
+inputSpec: http://127.0.0.1:8080/v3/api-docs
+outputDir: ./collegeapi
+additionalProperties:
+  pubName: collegeapi
+  pubVersion: 0.1.0
+  pubDescription: Pacote da API College
+  apiSuffix: ""

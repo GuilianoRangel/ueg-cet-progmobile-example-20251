@@ -1,4 +1,6 @@
-import 'package:collegeapi/api.dart';
+
+import 'package:collegeapi/collegeapi.dart';
+import 'package:dio/dio.dart';
 import 'package:provider/provider.dart';
 import 'package:routefly/routefly.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +10,11 @@ import 'main.route.dart'; // <- GENERATED
 
 part 'main.g.dart'; // <- GENERATED
 
+
 class AppApi {
   Signal<String> url = Signal<String>("");
   Signal<String> token = Signal<String>("");
-  late ApiClient api;
+  late Collegeapi api;
   AppApi({required urlValue}){
     url.value=urlValue;
 
@@ -19,11 +22,19 @@ class AppApi {
 
     url.subscribe((value) {
       print("value:"+value);
-      api = _createApiClient(basePath: urlValue);
+        api.dio.options.baseUrl = value;
     });
   }
   _createApiClient({required String basePath}){
-    return ApiClient(basePath: basePath);
+    return Collegeapi(basePathOverride: basePath,
+        interceptors: [
+          InterceptorsWrapper(onRequest: (options, handler) {
+            if(token.value!="") {
+              options.headers['Authorization'] = 'Bearer ${token.value}';
+            }
+            return handler.next(options);
+          })
+        ]);
   }
 
   dispose() async {

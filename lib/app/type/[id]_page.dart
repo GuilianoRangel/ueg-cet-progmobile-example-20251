@@ -1,11 +1,11 @@
 import 'dart:convert';
 
+import 'package:collegeapi/collegeapi.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_modelo_20251/main.dart';
 import 'package:provider/provider.dart';
 import 'package:routefly/routefly.dart';
-import 'package:collegeapi/api.dart';
-import 'package:dio/dio.dart';
+
 
 class TypeEditPage extends StatefulWidget {
   const TypeEditPage({super.key});
@@ -54,9 +54,11 @@ class _TypeEditPageState extends State<TypeEditPage> {
     final nomeEditado = _nameController.text;
 
 
-    final categoryDTO = CategoryDTO(name: nomeEditado); // CategoryDTO |
+    final categoryDTO = CategoryDTO((c) => c
+        ..name= nomeEditado
+    ); // CategoryDTO |
 
-    categoryController?.categoryControllerCreate(categoryDTO)
+    categoryController?.categoryControllerCreate(categoryDTO: categoryDTO)
         .then((value) {
           // Salvar as alterações do type usando o tipoId e nomeEditado
           ScaffoldMessenger.of(context).showSnackBar(
@@ -64,7 +66,8 @@ class _TypeEditPageState extends State<TypeEditPage> {
           );
           Navigator.pop(context);
         }).catchError((error) {
-          var errorResponse = MessageResponse.fromJson(jsonDecode(error.message));
+          //var errorResponse = MessageResponse.fromJson(jsonDecode(error.message));
+          var errorResponse = jsonDecode(error.message);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Error "${errorResponse?.message}"')),
           );
@@ -103,7 +106,7 @@ class _TypeEditPageState extends State<TypeEditPage> {
   void initApi(BuildContext context) {
     if(this.api == null){
       this.api = context.read<AppApi>();
-      this.categoryController = CategoryControllerApi(api?.api);
+      this.categoryController = api?.api.getCategoryControllerApi();
     }
   }
 }

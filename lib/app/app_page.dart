@@ -125,11 +125,16 @@ class _AppPageState extends State<AppPage> with SignalsMixin {
                 );
               },
             ),
+            TextButton(onPressed: _navigateListCategory, child: Text("List Cat")),
             TextButton(onPressed: _navigateToAboutPage, child: Text("Sobre")),
             IconButton(onPressed: _openTypeEditPage, icon: const Icon(Icons.edit))
           ]
       ),
     );
+  }
+
+  void _navigateListCategory() {
+    Routefly.push(routePaths.type.list);
   }
 }
 

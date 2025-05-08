@@ -32,9 +32,14 @@ List<RouteEntity> get routes => [
     routeBuilder: b5Builder,
   ),
   RouteEntity(
+    key: 'type/list',
+    uri: Uri.parse('type/list'),
+    routeBuilder: b6Builder,
+  ),
+  RouteEntity(
     key: 'type/[id]',
     uri: Uri.parse('type/[id]'),
-    routeBuilder: b6Builder,
+    routeBuilder: b7Builder,
   ),
 ];
 
@@ -48,5 +53,5 @@ const routePaths = (
     register: '/student/register',
     room: '/student/room',
   ),
-  type: (path: '/type', $id: '/type/[id]'),
+  type: (path: '/type', list: '/type/list', $id: '/type/[id]'),
 );

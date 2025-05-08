@@ -24,6 +24,7 @@ dependencies:
     path: ./collegeapi
   dio: ^5.8.0+1
   provider: ^6.1.4
+  built_collection: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -36,6 +37,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
   openapi_generator: ^6.1.0
+  build_runner: ^2.4.15
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
