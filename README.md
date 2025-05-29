@@ -22,3 +22,11 @@ openapi-generator generate -c config_openapi_generator.yaml
 cd collegeapi
 flutter pub get
 flutter pub run build_runner build
+
+
+## criação de pacote para reaproveitar funções
+```
+flutter create -t package confirm_dialog
+```
+
+* Para utiilizar

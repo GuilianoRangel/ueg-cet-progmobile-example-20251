@@ -5,26 +5,29 @@ import 'package:routefly/routefly.dart';
 
 import 'app/about/about_page.dart' as a0;
 import 'app/app_page.dart' as a1;
-import 'app/notfound_page.dart' as a2;
-import 'app/student/register/register_page.dart' as a3;
-import 'app/student/room/room_page.dart' as a4;
-import 'app/student/student_layout.dart' as a5;
-import 'app/type/[id]_page.dart' as a7;
-import 'app/type/list_page.dart' as a6;
+import 'app/auth/login_page.dart' as a2;
+import 'app/notfound_page.dart' as a3;
+import 'app/student/register/register_page.dart' as a4;
+import 'app/student/room/room_page.dart' as a5;
+import 'app/student/student_layout.dart' as a6;
+import 'app/type/[id]_page.dart' as a8;
+import 'app/type/list_page.dart' as a7;
 
 Route b0Builder(BuildContext ctx, RouteSettings settings) =>
     Routefly.defaultRouteBuilder(ctx, settings, const a0.AboutPage());
 Route b1Builder(BuildContext ctx, RouteSettings settings) =>
     Routefly.defaultRouteBuilder(ctx, settings, const a1.AppPage());
 Route b2Builder(BuildContext ctx, RouteSettings settings) =>
-    Routefly.defaultRouteBuilder(ctx, settings, const a2.NotFoundPage());
+    Routefly.defaultRouteBuilder(ctx, settings, const a2.LoginScreenPage());
 Route b3Builder(BuildContext ctx, RouteSettings settings) =>
-    Routefly.defaultRouteBuilder(ctx, settings, const a3.RegisterPage());
+    Routefly.defaultRouteBuilder(ctx, settings, const a3.NotFoundPage());
 Route b4Builder(BuildContext ctx, RouteSettings settings) =>
-    Routefly.defaultRouteBuilder(ctx, settings, const a4.RoomPage());
+    Routefly.defaultRouteBuilder(ctx, settings, const a4.RegisterPage());
 Route b5Builder(BuildContext ctx, RouteSettings settings) =>
-    Routefly.defaultRouteBuilder(ctx, settings, const a5.NotFoundPage());
+    Routefly.defaultRouteBuilder(ctx, settings, const a5.RoomPage());
 Route b6Builder(BuildContext ctx, RouteSettings settings) =>
-    Routefly.defaultRouteBuilder(ctx, settings, const a6.CategoryListPage());
+    Routefly.defaultRouteBuilder(ctx, settings, const a6.NotFoundPage());
 Route b7Builder(BuildContext ctx, RouteSettings settings) =>
-    Routefly.defaultRouteBuilder(ctx, settings, const a7.TypeEditPage());
+    Routefly.defaultRouteBuilder(ctx, settings, const a7.CategoryListPage());
+Route b8Builder(BuildContext ctx, RouteSettings settings) =>
+    Routefly.defaultRouteBuilder(ctx, settings, const a8.TypeEditPage());

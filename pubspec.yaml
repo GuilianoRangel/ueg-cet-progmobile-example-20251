@@ -22,6 +22,8 @@ dependencies:
   shared_preferences: ^2.5.2
   collegeapi:
     path: ./collegeapi
+  confirm_dialog:
+    path: ./confirm_dialog
   dio: ^5.8.0+1
   provider: ^6.1.4
   built_collection: ^5.1.1
@@ -49,6 +51,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons room.
   uses-material-design: true
+  assets:
+    - assets/imgs/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

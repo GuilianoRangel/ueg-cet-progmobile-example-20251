@@ -10,36 +10,41 @@ List<RouteEntity> get routes => [
     routeBuilder: b1Builder,
   ),
   RouteEntity(
+    key: 'auth/login',
+    uri: Uri.parse('auth/login'),
+    routeBuilder: b2Builder,
+  ),
+  RouteEntity(
     key: 'notfound',
     uri: Uri.parse('notfound'),
-    routeBuilder: b2Builder,
+    routeBuilder: b3Builder,
   ),
   RouteEntity(
     key: 'student/register',
     parent: 'student',
     uri: Uri.parse('student/register'),
-    routeBuilder: b3Builder,
+    routeBuilder: b4Builder,
   ),
   RouteEntity(
     key: 'student/room',
     parent: 'student',
     uri: Uri.parse('student/room'),
-    routeBuilder: b4Builder,
+    routeBuilder: b5Builder,
   ),
   RouteEntity(
     key: 'student',
     uri: Uri.parse('student'),
-    routeBuilder: b5Builder,
+    routeBuilder: b6Builder,
   ),
   RouteEntity(
     key: 'type/list',
     uri: Uri.parse('type/list'),
-    routeBuilder: b6Builder,
+    routeBuilder: b7Builder,
   ),
   RouteEntity(
     key: 'type/[id]',
     uri: Uri.parse('type/[id]'),
-    routeBuilder: b7Builder,
+    routeBuilder: b8Builder,
   ),
 ];
 
@@ -47,6 +52,7 @@ const routePaths = (
   path: '/',
   about: '/about',
   lib: (path: '/lib', app: '/lib/app'),
+  auth: (path: '/auth', login: '/auth/login'),
   notfound: '/notfound',
   student: (
     path: '/student',

@@ -82,7 +82,7 @@ class App extends StatelessWidget {
         themeMode: ThemeMode.system,
         routerConfig: Routefly.routerConfig(
           routes: routes,
-          initialPath: routePaths.lib.app,
+          initialPath: routePaths.auth.login,
           notFoundPath: '/notfound',
           /*routeBuilder: (context, settings, child) {
             return MaterialPageRoute(
